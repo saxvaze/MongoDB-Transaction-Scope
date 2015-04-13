@@ -1,0 +1,30 @@
+﻿body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+header {
+    height: 80px;
+    width: 100%;
+    background: #222222;
+    color: #999999;
+}
+header h2:hover,
+header ul li:hover {
+    color: #CCCCCC;
+    cursor: pointer;
+}
+.app-title {
+    padding: 30px 10px 10px 50px;
+    font-size: 20px;
+}
+header ul {
+    padding: 34px 10px 10px 50px;
+}
+header ul li {
+    padding: 0 8px;
+    display: inline-block;
+}
+
+/* helpers */
+.float-left {
+    float: left
+}
