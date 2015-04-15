@@ -5,4 +5,53 @@
     Layout = "~/Views/Shared/_layout.cshtml";
 }
 
-<h2>Register</h2>
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    <div class="col-3">
+        <div class="input-group">
+            @Html.LabelFor(model => model.Username)
+            @Html.EditorFor(model => model.Username)
+        </div>
+        <div class="input-group">
+            @Html.LabelFor(model => model.Password)
+            @Html.EditorFor(model => model.Password)
+        </div>
+        <div class="input-group">
+            @Html.LabelFor(model => model.PersonalNumber)
+            @Html.EditorFor(model => model.PersonalNumber)
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="input-group">
+            @Html.LabelFor(model => model.FirstName)
+            @Html.EditorFor(model => model.FirstName)
+        </div>
+        <div class="input-group">
+            @Html.LabelFor(model => model.LastName)
+            @Html.EditorFor(model => model.LastName)
+        </div>
+        <div class="input-group">
+            @Html.LabelFor(model => model.BirthDate)
+            <input type="text" name="BirthDate" id="BirthDate" />
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="input-group">
+            @Html.LabelFor(model => model.UserInfo.EMail)
+            @Html.EditorFor(model => model.UserInfo.EMail)
+        </div>
+        <div class="input-group">
+            @Html.LabelFor(model => model.UserInfo.Mobile)
+            @Html.EditorFor(model => model.UserInfo.Mobile)
+        </div>
+        <div class="input-group">
+            @Html.LabelFor(model => model.UserInfo.Address)
+            @Html.EditorFor(model => model.UserInfo.Address)
+        </div>
+    </div>
+    
+    <span class="registration-button blue-button">
+        <span class="glyphicon glyphicon-arrow-down"></span>
+        Registration
+    </span>
+}

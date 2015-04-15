@@ -8,8 +8,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
-    <title>Mongo Transaction | Home</title>
+    <title>Mongo Transaction | @ViewBag.Title</title>
     <link href="~/Content/CSS/reset.css" rel="stylesheet" />
+    <link href="~/Content/CSS/glyphicons.css" rel="stylesheet" />
     <link href="~/Content/CSS/style.css" rel="stylesheet" />
 </head>
 <body>
@@ -17,10 +18,10 @@
         <h2 class="app-title float-left">MongoDB Transaction Scope</h2>
         <nav class="main-nav">
             <ul class="float-right">
-                <li>Main</li>
-                <li>Registration</li>
-                <li>Update User</li>
-                <li>Delete User</li>
+                <li><a href="#">Main</a></li>
+                <li><a href="@Url.Action("Register", "Account")">Registration</a></li>
+                <li><a href="#">Update User</a></li>
+                <li><a href="#">Delete User</a></li>
             </ul>
         </nav>
     </header>

@@ -1,36 +1,112 @@
-﻿body {
+﻿/* helpers */
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+/* bootstrapping */
+.col-3 {
+    width: 32.5%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.input-group {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+    .input-group label {
+        width: 100%;
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .input-group input[type="text"],
+    .input-group input[type="password"] {
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 5px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: all ease-in-out .15s;
+        -moz-transition: all ease-in-out .15s;
+        -o-transition: all ease-in-out .15s;
+        transition: all ease-in-out .15s;
+    }
+
+        .input-group input[type="text"]:focus,
+        .input-group input[type="password"]:focus {
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+        }
+
+.blue-button {
+    background-color: #337ab7;
+    border: 1px solid #2e6da4;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    font-size: .9em;
+    cursor: pointer;
+    outline: 0;
+}
+
+    .blue-button:hover {
+        background-color: #2d6ca2;
+    }
+
+/* game */
+body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
 header {
     height: 80px;
     width: 100%;
     background: #222222;
     color: #999999;
 }
-header h2:hover,
-header ul li:hover {
-    color: #CCCCCC;
-    cursor: pointer;
-}
+
+    header h2:hover,
+    header ul li:hover {
+        color: #CCCCCC;
+        cursor: pointer;
+    }
+
 .app-title {
     margin: 30px 10px 10px 50px;
     font-size: 20px;
 }
+
 header ul {
     margin: 34px 10px 10px 50px;
 }
-header ul li {
-    padding: 0 8px;
-    display: inline-block;
-}
+
+    header ul li {
+        padding: 0 8px;
+        display: inline-block;
+    }
+
 nav.main-nav {
     margin-right: 50px;
 }
 
-/* helpers */
-.float-left {
-    float: left
+section {
+    width: 80%;
+    margin: 0 auto;
 }
-.float-right {
-    float: right;
+.registration-button .glyphicon {
+    font-size: 0.9em;
 }
