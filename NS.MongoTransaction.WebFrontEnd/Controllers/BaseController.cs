@@ -33,9 +33,9 @@ namespace NS.MongoTransaction.WebFrontEnd.Controllers
         /// <remarks>
         /// carries data about collection User
         /// </remarks>
-        public MongoCollection<User> CollectionUser
+        public MongoCollection<User> GetUserCollection
         {
-            get { return Database("test").GetCollection<User>("User"); }
+            get { return Database("foo").GetCollection<User>("User"); }
         }
     }
 }
