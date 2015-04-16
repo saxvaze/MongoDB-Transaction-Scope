@@ -38,5 +38,14 @@ namespace NS.MongoTransaction.WebFrontEnd.Controllers
         {
             get { return Database("foo").GetCollection<User>("user"); }
         }
+
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            if (filterContext.ExceptionHandled)
+                return;
+
+            filterContext.ExceptionHandled = true;
+            filterContext.Result = new RedirectResult("~/Error/Index");
+        }
     }
 }
