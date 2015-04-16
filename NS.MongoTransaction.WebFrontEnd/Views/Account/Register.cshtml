@@ -5,48 +5,70 @@
     Layout = "~/Views/Shared/_layout.cshtml";
 }
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+@if (ViewBag.Success != null && ViewBag.Success)
+{
+    <div class="callout-success">
+        Registration Completed Successfully
+    </div> 
+}
+else if (ViewBag.Success != null && !ViewBag.Success)
+{
+    if (ViewBag.Message != null)
+    {
+        <div class="callout-fail">
+            @ViewBag.Message 
+        </div>  
+    }
+    else
+    {
+        <div class="callout-fail">
+            Cannot Complete Registration
+        </div> 
+    }
+}
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "registration-form" }))
 {
     <div class="col-3">
         <div class="input-group">
             @Html.LabelFor(model => model.Username)
-            @Html.EditorFor(model => model.Username)
+            @Html.TextBoxFor(model => model.Username, new { tabindex = 1 })
         </div>
         <div class="input-group">
             @Html.LabelFor(model => model.Password)
-            @Html.EditorFor(model => model.Password)
+            @Html.TextBoxFor(model => model.Password, new { tabindex = 2 })
         </div>
         <div class="input-group">
             @Html.LabelFor(model => model.PersonalNumber)
-            @Html.EditorFor(model => model.PersonalNumber)
+            @Html.TextBoxFor(model => model.PersonalNumber, new { tabindex = 3 })
         </div>
     </div>
     <div class="col-3">
         <div class="input-group">
             @Html.LabelFor(model => model.FirstName)
-            @Html.EditorFor(model => model.FirstName)
+            @Html.TextBoxFor(model => model.FirstName, new { tabindex = 4 })
         </div>
         <div class="input-group">
             @Html.LabelFor(model => model.LastName)
-            @Html.EditorFor(model => model.LastName)
+            @Html.TextBoxFor(model => model.LastName, new { tabindex = 5 })
         </div>
         <div class="input-group">
             @Html.LabelFor(model => model.BirthDate)
-            <input type="text" name="BirthDate" id="BirthDate" />
+            @Html.TextBoxFor(model => model.BirthDate, new { tabindex = 6, type = "text" })
         </div>
     </div>
     <div class="col-3">
         <div class="input-group">
             @Html.LabelFor(model => model.UserInfo.EMail)
-            @Html.EditorFor(model => model.UserInfo.EMail)
+            @Html.TextBoxFor(model => model.UserInfo.EMail, new { tabindex = 7 })
         </div>
         <div class="input-group">
             @Html.LabelFor(model => model.UserInfo.Mobile)
-            @Html.EditorFor(model => model.UserInfo.Mobile)
+            @Html.TextBoxFor(model => model.UserInfo.Mobile, new { tabindex = 8 })
         </div>
         <div class="input-group">
             @Html.LabelFor(model => model.UserInfo.Address)
-            @Html.EditorFor(model => model.UserInfo.Address)
+            @Html.TextBoxFor(model => model.UserInfo.Address, new { tabindex = 9 })
         </div>
     </div>
     
@@ -55,3 +77,22 @@
         Registration
     </span>
 }
+
+<script>
+    var submiter = document.getElementsByClassName("registration-button")[0];
+    var form = document.getElementById("registration-form");
+
+    submiter.addEventListener("click", function (e) {
+        form.submit();
+    });
+
+    var inputs = document.getElementById("registration-form").getElementsByTagName("input");
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('keypress', function (e) {
+            var key = e.which || e.keyCode;
+            if (key === 13) {
+                form.submit();
+            }
+        });
+    }
+</script>

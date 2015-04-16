@@ -2,6 +2,7 @@
 using NS.MongoTransaction.Common.Entities;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -17,8 +18,8 @@ namespace NS.MongoTransaction.WebFrontEnd.Controllers
         public MongoDatabase Database(string dbName)
         {
             MongoDatabase mongoDBContext;
-            
-            string MongoDBConnectionString = "mongodb://localhost";
+
+            string MongoDBConnectionString = ConfigurationManager.ConnectionStrings["MongoDBConnectionString"].ConnectionString;
             var client = new MongoClient(MongoDBConnectionString);
             var server = client.GetServer();
 
@@ -35,7 +36,7 @@ namespace NS.MongoTransaction.WebFrontEnd.Controllers
         /// </remarks>
         public MongoCollection<User> GetUserCollection
         {
-            get { return Database("foo").GetCollection<User>("User"); }
+            get { return Database("foo").GetCollection<User>("user"); }
         }
     }
 }
