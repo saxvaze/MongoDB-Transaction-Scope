@@ -18,7 +18,7 @@ namespace NS.MongoTransaction.WebFrontEnd.Controllers
         [HttpPost]
         public ActionResult Register(User model)
         {
-            model.UserId = 1;
+            model.UserId = 1; // TODO: Hard coded
 
             try
             {
