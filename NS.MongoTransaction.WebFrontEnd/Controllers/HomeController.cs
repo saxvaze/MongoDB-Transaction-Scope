@@ -1,5 +1,8 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using MongoDB.Driver.Builders;
+using NS.MongoTransaction.BLL;
+using NS.MongoTransaction.Common.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +13,18 @@ namespace NS.MongoTransaction.WebFrontEnd.Controllers
 {
     public class HomeController : BaseController
     {
+        UserService _userService;
+
+        public HomeController()
+        {
+            _userService = new UserService();
+        }
+
         public ActionResult Index()
         {
-            //var a = base.CollectionUser.FindOne(Query.EQ("_id", new BsonInt32(1)));
+            var model = _userService.GetUsers();
 
-            return View();
+            return View(model);
         }
     }
 }

@@ -40,6 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NS.MongoTransaction.Common\NS.MongoTransaction.Common.csproj">
+      <Project>{77bbaf5f-a339-4ac0-a72c-04661eb3188b}</Project>
+      <Name>NS.MongoTransaction.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NS.MongoTransaction.DAL\NS.MongoTransaction.DAL.csproj">
+      <Project>{368d3369-fd01-49d5-af8e-dc8bf87eca4d}</Project>
+      <Name>NS.MongoTransaction.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

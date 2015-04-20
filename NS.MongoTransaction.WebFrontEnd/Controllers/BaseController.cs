@@ -11,34 +11,6 @@ namespace NS.MongoTransaction.WebFrontEnd.Controllers
 {
     public class BaseController : Controller
     {
-        /// <summary>
-        /// returns db context according to param dbName
-        /// </summary>
-        /// <param name="dbName">dbName identifies which database to return</param>
-        public MongoDatabase Database(string dbName)
-        {
-            MongoDatabase mongoDBContext;
-
-            string MongoDBConnectionString = ConfigurationManager.ConnectionStrings["MongoDBConnectionString"].ConnectionString;
-            var client = new MongoClient(MongoDBConnectionString);
-            var server = client.GetServer();
-
-            mongoDBContext = server.GetDatabase(dbName);
-
-            return mongoDBContext;
-        }
-
-        /// <summary>
-        /// returns MongoDB Collection User of database test
-        /// </summary>
-        /// <remarks>
-        /// carries data about collection User
-        /// </remarks>
-        public MongoCollection<User> GetUserCollection
-        {
-            get { return Database("foo").GetCollection<User>("user"); }
-        }
-
         protected override void OnException(ExceptionContext filterContext)
         {
             if (filterContext.ExceptionHandled)

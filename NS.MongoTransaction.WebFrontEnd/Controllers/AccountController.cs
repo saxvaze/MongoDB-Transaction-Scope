@@ -1,4 +1,7 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Builders;
+using NS.MongoTransaction.BLL;
 using NS.MongoTransaction.Common.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,6 +13,13 @@ namespace NS.MongoTransaction.WebFrontEnd.Controllers
 {
     public class AccountController : BaseController
     {
+        UserService _userService;
+
+        public AccountController()
+        {
+            _userService = new UserService();
+        }
+
         public ActionResult Register()
         {
             return View();
@@ -18,13 +28,11 @@ namespace NS.MongoTransaction.WebFrontEnd.Controllers
         [HttpPost]
         public ActionResult Register(User model)
         {
-            model.UserId = 1; // TODO: Hard coded
-
             try
             {
                 if (ModelState.IsValid)
                 {
-                    GetUserCollection.Save(model);
+                    _userService.RegisterUser(model);
 
                     ViewBag.Success = true;
                 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NS.MongoTransaction.Common"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NS.MongoTransaction.BLL", "NS.MongoTransaction.BLL\NS.MongoTransaction.BLL.csproj", "{AEDF2F6F-75C4-47B3-8568-10F27D167603}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NS.MongoTransaction.DAL", "NS.MongoTransaction.DAL\NS.MongoTransaction.DAL.csproj", "{368D3369-FD01-49D5-AF8E-DC8BF87ECA4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{AEDF2F6F-75C4-47B3-8568-10F27D167603}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEDF2F6F-75C4-47B3-8568-10F27D167603}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEDF2F6F-75C4-47B3-8568-10F27D167603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{368D3369-FD01-49D5-AF8E-DC8BF87ECA4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368D3369-FD01-49D5-AF8E-DC8BF87ECA4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368D3369-FD01-49D5-AF8E-DC8BF87ECA4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368D3369-FD01-49D5-AF8E-DC8BF87ECA4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

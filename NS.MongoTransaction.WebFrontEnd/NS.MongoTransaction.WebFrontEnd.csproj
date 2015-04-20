@@ -162,6 +162,10 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NS.MongoTransaction.BLL\NS.MongoTransaction.BLL.csproj">
+      <Project>{aedf2f6f-75c4-47b3-8568-10f27d167603}</Project>
+      <Name>NS.MongoTransaction.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NS.MongoTransaction.Common\NS.MongoTransaction.Common.csproj">
       <Project>{77bbaf5f-a339-4ac0-a72c-04661eb3188b}</Project>
       <Name>NS.MongoTransaction.Common</Name>
