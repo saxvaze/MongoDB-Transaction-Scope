@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Entities\AvailableUserId.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Wallet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

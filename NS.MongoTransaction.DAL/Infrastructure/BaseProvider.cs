@@ -49,5 +49,16 @@ namespace NS.MongoTransaction.DAL.Infrastructure
         {
             get { return Database("foo").GetCollection<AvailableUserId>("availableUserIds"); }
         }
+
+        /// <summary>
+        /// returns User Wallet
+        /// </summary>
+        /// <remarks>
+        /// carries data about collection wallet
+        /// </remarks>
+        protected MongoCollection<Wallet> GetUserWallet
+        {
+            get { return Database("foo").GetCollection<Wallet>("wallet"); }
+        }
     }
 }

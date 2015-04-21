@@ -49,6 +49,9 @@ namespace NS.MongoTransaction.Common.Entities
         [BsonIgnoreIfNull]
         [BsonElement("info")]
         public UserInfo UserInfo { get; set; }
+
+        [BsonIgnoreIfNull]
+        public Wallet UserWallet { get; set; }
     }
 
     [BsonIgnoreExtraElements]

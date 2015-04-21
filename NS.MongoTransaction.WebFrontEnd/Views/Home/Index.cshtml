@@ -16,8 +16,7 @@
                 <th>Personal Number</th>
                 <th>Birth Date</th>
                 <th>Mobile</th>
-                <th>EMail</th>
-                <th>Address</th>
+                <th>Balance</th>
             </tr>
         </thead>
         <tbody>
@@ -30,8 +29,7 @@
                     <td>@user.PersonalNumber</td>
                     <td>@user.BirthDate.ToShortDateString()</td>
                     <td>@user.UserInfo.Mobile</td>
-                    <td>@user.UserInfo.EMail</td>
-                    <td>@user.UserInfo.Address</td>
+                    <td>@user.UserWallet.Balance</td>
                 </tr> 
             }
         </tbody>

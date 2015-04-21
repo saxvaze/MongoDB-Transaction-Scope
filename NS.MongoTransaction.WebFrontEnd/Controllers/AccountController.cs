@@ -49,5 +49,10 @@ namespace NS.MongoTransaction.WebFrontEnd.Controllers
 
             return View();
         }
+
+        public ActionResult Deposit()
+        {
+            return View();
+        }
     }
 }
