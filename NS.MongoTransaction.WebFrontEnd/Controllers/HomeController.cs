@@ -29,5 +29,10 @@ namespace NS.MongoTransaction.WebFrontEnd.Controllers
 
             return View(model);
         }
+
+        public ActionResult TransaferBalances()
+        {
+            return View();
+        }
     }
 }
