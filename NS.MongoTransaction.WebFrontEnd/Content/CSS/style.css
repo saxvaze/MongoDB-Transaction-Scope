@@ -255,6 +255,7 @@ section {
 .input-group input[type="password"].input-validation-error {
     border-color: #d00;
 }
+
 .responsive-main-nav {
     display: none;
 }
@@ -273,9 +274,11 @@ section {
     .responsive-menu-toggler {
         display: inline-block;
     }
+
     .main-nav {
         display: none;
     }
+
     nav.responsive-main-nav {
         display: none;
         position: absolute;
