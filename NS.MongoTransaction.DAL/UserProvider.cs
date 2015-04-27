@@ -1,4 +1,5 @@
-﻿using NS.MongoTransaction.Common.Entities;
+﻿using MongoDB.Driver.Builders;
+using NS.MongoTransaction.Common.Entities;
 using NS.MongoTransaction.DAL.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,11 @@ namespace NS.MongoTransaction.DAL
             }
 
             return users;
+        }
+
+        public User GetUserByPersonalNumber(string personalNumber)
+        {
+            return GetUserCollection.FindOne(Query.EQ("personalNumber", personalNumber));
         }
     }
 }

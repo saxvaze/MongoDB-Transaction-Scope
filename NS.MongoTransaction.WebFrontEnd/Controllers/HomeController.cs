@@ -30,9 +30,13 @@ namespace NS.MongoTransaction.WebFrontEnd.Controllers
             return View(model);
         }
 
-        public ActionResult TransaferBalances()
+        [HttpPost]
+        public string GetUsernameByPersonalNumber(string personalNumber)
         {
-            return View();
+            var user = _userService.GetUserByPersonalNumber(personalNumber);
+            if (user == null)
+                return null;
+            else return user.Username;
         }
     }
 }

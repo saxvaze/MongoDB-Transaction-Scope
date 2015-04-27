@@ -1,0 +1,42 @@
+﻿@model NS.MongoTransaction.WebFrontEnd.Models.TransferBalancesModel
+
+@{
+    ViewBag.Title = "TransferBalances";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+@using (Html.BeginForm("TransferBalances", "Wallet", FormMethod.Post, new { id = "transfer-amount-form" }))
+{ 
+    <div class="general-wrapper width-percentage-35 float-left">
+        <h2 class="caption">From User</h2>
+        <div class="input-group">
+            <label for="FromUserPersonalNumber">Personal Number</label>
+            @Html.TextBoxFor(m => m.FromUserPersonalNumber)
+        </div>
+        <div id="from-user-container">
+            <h2 class="caption">Username:
+                <span class="from-user-place"></span>
+            </h2>
+        </div>
+    </div>
+    <div class="middle-wrapper width-percentage-30 float-left">
+        <div class="input-group" style="margin-top: 40px;">
+            <label for="Amount" class="">Amount</label>
+            @Html.TextBoxFor(m => m.Amount)
+        </div>
+        <input type="submit" value="transfer" class="blue-button" />
+    </div>
+    <div class="general-wrapper width-percentage-35 float-right">
+        <h2 class="caption">To User</h2>
+        <div class="input-group">
+            <label for="ToUserPersonalNumber">Personal Number</label>
+            @Html.TextBoxFor(m => m.ToUserPersonalNumber)
+        </div>
+        <div id="to-user-container">
+            <h2 class="caption">Username:
+                <span class="to-user-place"></span>
+            </h2>
+        </div>
+    </div>
+}
+<input type="hidden" value="@Url.Action("GetUsernameByPersonalNumber", "Home")" id="get-username-by-personal-number-url" />

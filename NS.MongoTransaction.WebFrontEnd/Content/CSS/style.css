@@ -7,12 +7,39 @@
     float: right;
 }
 
+.display-block {
+    display: block;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 /* bootstrapping */
+.col-2 {
+    width: 48%;
+    padding: 0 10px 10px 10px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
 .col-3 {
     width: 32.5%;
     padding: 0 10px 10px 10px;
     box-sizing: border-box;
     display: inline-block;
+}
+
+.width-percentage-30 {
+    width: 30%;
+}
+
+.width-percentage-35 {
+    width: 35%;
+}
+
+.width-percentage-40 {
+    width: 40%;
 }
 
 .input-group {
@@ -100,7 +127,12 @@
     border: 1px solid #ddd;
     padding: 15px;
     border-radius: 4px;
+    box-sizing: border-box;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, .3);
+}
+
+.middle-wrapper {
+    text-align: center;
 }
 
 .caption {
@@ -259,6 +291,12 @@ section {
 .responsive-main-nav {
     display: none;
 }
+
+#from-user-container h2,
+#to-user-container h2 {
+    color: #444;
+}
+
 /* media queries */
 @media screen and (max-width: 1200px) {
     section {

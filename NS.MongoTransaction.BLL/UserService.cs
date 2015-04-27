@@ -48,5 +48,10 @@ namespace NS.MongoTransaction.BLL
             
             return users;
         }
+
+        public User GetUserByPersonalNumber(string personalNumber)
+        {
+            return _userProvider.GetUserByPersonalNumber(personalNumber);
+        }
     }
 }
