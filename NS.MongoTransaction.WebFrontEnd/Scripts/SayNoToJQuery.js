@@ -1,6 +1,6 @@
 ﻿/**
  *
- * This code snipped helps to make ajax request using jQuery syntax
+ * This code snippet helps to make ajax request using jQuery syntax
  * not finished!
  *
  */
