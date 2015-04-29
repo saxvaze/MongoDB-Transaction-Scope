@@ -34,7 +34,43 @@
             }
         </tbody>
     </table>
-    <table data-width="768">
-        
+    <table data-width="768" class="responsive-table">
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>Username</td>
+                    <td>@user.Username</td>
+                </tr> 
+                <tr>
+                    <td>First name</td>
+                    <td>@user.FirstName</td>
+                </tr>
+                <tr>
+                    <td>Last name</td>
+                    <td>@user.LastName</td>
+                </tr> 
+                <tr>
+                    <td>Personal number</td>
+                    <td>@user.PersonalNumber</td>
+                </tr>
+                <tr>
+                    <td>Birth date</td>
+                    <td>@user.BirthDate.ToShortDateString()</td>
+                </tr> 
+                <tr>
+                    <td>Mobile</td>
+                    <td>@user.UserInfo.Mobile</td>
+                </tr>
+                <tr>
+                    <td>Balance</td>
+                    <td>@user.UserWallet.Balance</td>
+                </tr>
+                <tr>
+                    <td style="border:none"></td>
+                    <td style="border:none"></td>
+                </tr>
+            }
+        </tbody>
     </table>
 </div>
