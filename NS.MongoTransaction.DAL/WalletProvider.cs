@@ -16,11 +16,11 @@ namespace NS.MongoTransaction.DAL
         public Wallet GetUserWalletById(int userId)
         {
             var wallet = GetUserWallet.FindOne(Query.EQ("userId", userId));
-            
+
             return wallet;
         }
 
-        public bool Deposit(int userId, double amount)
+        public void Deposit(int userId, double amount)
         {
             var setStatement = new BsonDocument
             {
@@ -34,24 +34,12 @@ namespace NS.MongoTransaction.DAL
 
             var updateWrapper = UpdateWrapper.Create(setStatement);
 
-            try
-            {
-                GetUserWallet.Update(Query.EQ("userId", userId), updateWrapper);
-
-                return true;
-            }
-            catch 
-            {
-                return false;
-            }
+            GetUserWallet.Update(Query.EQ("userId", userId), updateWrapper);
         }
 
-        public bool Withdraw(int userId, double amount)
+        public void Withdraw(int userId, double amount)
         {
             var userWallet = GetUserWallet.FindOne(Query.EQ("userId", userId));
-
-            if (userWallet.Balance < amount)
-                return false;
 
             var setStatement = new BsonDocument
             {
@@ -65,16 +53,7 @@ namespace NS.MongoTransaction.DAL
 
             var updateWrapper = UpdateWrapper.Create(setStatement);
 
-            try
-            {
-                GetUserWallet.Update(Query.EQ("userId", userId), updateWrapper);
-
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            GetUserWallet.Update(Query.EQ("userId", userId), updateWrapper);
         }
 
         public void InsertWallet(Wallet wallet)

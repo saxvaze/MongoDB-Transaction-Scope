@@ -17,14 +17,19 @@ namespace NS.MongoTransaction.BLL
             _walletProvider = new WalletProvider();
         }
 
-        public Wallet GetUserWalletById(int userId)
+        public Wallet GetUserWalletByUserId(int userId)
         {
             return _walletProvider.GetUserWalletById(userId);
         }
 
-        public void IsertWallet(Wallet wallet)
+        public void InsertWallet(Wallet wallet)
         {
             _walletProvider.InsertWallet(wallet);
+        }
+
+        public void Withdraw(int userId, double amount)
+        {
+            _walletProvider.Withdraw(userId, amount);
         }
     }
 }

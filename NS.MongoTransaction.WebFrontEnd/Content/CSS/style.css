@@ -318,6 +318,10 @@ section {
     display: none;
 }
 
+#transfer-amount-form {
+    margin-top: 20px;
+}
+
 /* media queries */
 @media screen and (max-width: 1000px) {
     .app-title[data-width="absolute"] {

@@ -57,8 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\AvailableUserId.cs" />
+    <Compile Include="Entities\Transaction.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Wallet.cs" />
+    <Compile Include="Enum\TransactionStatus.cs" />
+    <Compile Include="Exceptions\CannotCompleteOperationException.cs" />
+    <Compile Include="Helpers\Utils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

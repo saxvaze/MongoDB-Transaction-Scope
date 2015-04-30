@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,10 +8,13 @@ namespace NS.MongoTransaction.WebFrontEnd.Models
 {
     public class TransferBalancesModel
     {
-        public string FromUserPersonalNumber { get; set; }
+        [Required(ErrorMessage = "Field is required", AllowEmptyStrings = false)]
+        public string SourceUserPersonalNumber { get; set; }
 
-        public string ToUserPersonalNumber { get; set; }
+        [Required(ErrorMessage = "Field is required", AllowEmptyStrings = false)]
+        public string DestinationUserPersonalNumber { get; set; }
 
+        [Required(ErrorMessage = "Field is required")]
         public double Amount { get; set; }
     }
 }

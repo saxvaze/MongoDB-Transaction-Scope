@@ -5,13 +5,27 @@
     Layout = "~/Views/Shared/_layout.cshtml";
 }
 
+@if (ViewBag.Success != null && ViewBag.Success == false)
+{
+    <div class="callout-fail">
+        @ViewBag.Message
+    </div>
+}
+
+@if (ViewBag.Success != null && ViewBag.Success == true)
+{
+    <div class="callout-success">
+        @ViewBag.Message
+    </div> 
+}
+
 @using (Html.BeginForm("TransferBalances", "Wallet", FormMethod.Post, new { id = "transfer-amount-form" }))
 { 
     <div class="general-wrapper width-percentage-35 float-left">
         <h2 class="caption">From User</h2>
         <div class="input-group">
-            <label for="FromUserPersonalNumber">Personal Number</label>
-            @Html.TextBoxFor(m => m.FromUserPersonalNumber)
+            <label for="SourceUserPersonalNumber">Personal Number</label>
+            @Html.TextBoxFor(m => m.SourceUserPersonalNumber)
         </div>
         <div id="from-user-container">
             <h2 class="caption">Username:
@@ -29,8 +43,8 @@
     <div class="general-wrapper width-percentage-35 float-right">
         <h2 class="caption">To User</h2>
         <div class="input-group">
-            <label for="ToUserPersonalNumber">Personal Number</label>
-            @Html.TextBoxFor(m => m.ToUserPersonalNumber)
+            <label for="DestinationUserPersonalNumber">Personal Number</label>
+            @Html.TextBoxFor(m => m.DestinationUserPersonalNumber)
         </div>
         <div id="to-user-container">
             <h2 class="caption">Username:

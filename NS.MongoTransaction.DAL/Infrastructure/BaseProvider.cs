@@ -51,6 +51,17 @@ namespace NS.MongoTransaction.DAL.Infrastructure
         }
 
         /// <summary>
+        /// returns MongoDB Collection avaulableUserIds of database foo
+        /// </summary>
+        /// <remarks>
+        /// carries data about collection avaulableUserIds
+        /// </remarks>
+        protected MongoCollection<Transaction> GetTransactionCollection
+        {
+            get { return Database("foo").GetCollection<Transaction>("transaction"); }
+        }
+
+        /// <summary>
         /// returns User Wallet
         /// </summary>
         /// <remarks>
