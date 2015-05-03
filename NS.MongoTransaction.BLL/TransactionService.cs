@@ -37,7 +37,7 @@ namespace NS.MongoTransaction.BLL
             {
                 UpdateTransactionStatus(transaction.Id, TransactionStatus.Canceled);
 
-                throw new CannotCompleteOperationException("Cannot withdraw source user");
+                throw new CannotCompleteOperationException("Cannot withdraw from source user");
             }
 
             // Deposit amount to destination user
@@ -50,7 +50,7 @@ namespace NS.MongoTransaction.BLL
                 _walletProvider.Deposit(transaction.SourceUserId, transaction.Amount);
                 UpdateTransactionStatus(transaction.Id, TransactionStatus.Canceled);
 
-                throw new CannotCompleteOperationException("Cannot deposit destination user");
+                throw new CannotCompleteOperationException("Cannot deposit to destination user");
             }
 
             // Finish transaction successfully

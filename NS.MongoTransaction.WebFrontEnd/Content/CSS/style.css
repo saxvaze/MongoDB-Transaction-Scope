@@ -314,10 +314,6 @@ section {
     display: none;
 }
 
-[data-width="480"] {
-    display: none;
-}
-
 #transfer-amount-form {
     margin-top: 20px;
 }

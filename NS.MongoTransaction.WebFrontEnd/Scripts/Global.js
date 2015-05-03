@@ -25,9 +25,9 @@
     });
 }
 
-window.onresize = function (event) {
-    if (event.target.innerWidth > 1000) {
-        var responsiveNav = document.getElementsByClassName("responsive-main-nav")[0];
-        var responsiveNavToggler = document.getElementsByClassName("responsive-menu-toggler")[0];
-    }
-}
+//window.onresize = function (event) {
+//    if (event.target.innerWidth > 1000) {
+//        var responsiveNav = document.getElementsByClassName("responsive-main-nav")[0];
+//        var responsiveNavToggler = document.getElementsByClassName("responsive-menu-toggler")[0];
+//    }
+//}
