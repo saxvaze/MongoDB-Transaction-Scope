@@ -4,6 +4,4 @@
 
 For fast look, check: NS.MongoTransaction.BLL/TransactionService.cs method ProcessTransaction()
 
-Example is not finished completely, but main scenariou is available.
-
 P.S. you may need to run Visual Studio under AdministratErivileges, because application is configured to run local IIS
