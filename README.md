@@ -4,4 +4,4 @@
 
 For fast look, check: NS.MongoTransaction.BLL/TransactionService.cs method ProcessTransaction()
 
-P.S. you may need to run Visual Studio under AdministratErivileges, because application is configured to run local IIS
+P.S. you may need to run Visual Studio under Administrator previleges, because application is configured to run local IIS
